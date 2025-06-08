@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
@@ -6,8 +6,7 @@ import { ChevronRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 export default function BlogCard() {
-
-    const router=useRouter();
+  const router = useRouter();
 
   return (
     <section className="pb-20 pt-20 md:pb-32 md:pt-32 container mx-auto">
@@ -56,12 +55,26 @@ export default function BlogCard() {
                 Suspendisse varius enim in eros.
               </p>
 
-              <Button onClick={()=>router.push('/blog/1')} variant="link" className="pl-0 mt-3 shadow-none">
+              <Button
+                onClick={() => router.push("/blog/1")}
+                variant="link"
+                className="pl-0 mt-3 shadow-none"
+              >
                 Read more <ChevronRight />
               </Button>
             </CardContent>
           </Card>
         ))}
+      </div>
+
+      <div className="flex justify-center mt-10">
+        <Button
+          onClick={() => router.push("/blog")}
+          variant="outline"
+          className="px-8 py-6 text-lg cursor-pointer"
+        >
+          View More Blogs
+        </Button>
       </div>
     </section>
   );
